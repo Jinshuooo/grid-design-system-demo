@@ -7,8 +7,7 @@ Josef Müller-Brockmann's 1968 classic *Grid Systems in Graphic Design*
 
 Companion skill: [grid-design-system](https://github.com/Jinshuooo/grid-design-system).
 
-<!-- Live demo URL: uncomment and replace after Cloudflare Pages deployment -->
-<!-- **Live demo:** https://your-domain.example -->
+**Live demo:** [grid-design-system-demo.pages.dev](https://grid-design-system-demo.pages.dev/)
 
 <!-- Screenshot: add preview.png and uncomment -->
 <!-- ![Cupertino Glass demo](./preview.png) -->
@@ -99,9 +98,8 @@ Once deployed to Cloudflare Pages:
    with free SSL/TLS certificates.
 5. If managed by another registrar, add the provided `CNAME` pointing to your
    `*.pages.dev` target.
-6. Once active, uncomment and replace the live URL placeholder in this
-   [README.md](./README.md), and add the final URL to the GitHub repository's
-   **Website** field.
+6. If you later bind a custom domain, update the live URL at the top of this
+   README and the GitHub repository's **Website** field.
 
 ---
 
