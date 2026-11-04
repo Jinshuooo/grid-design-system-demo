@@ -9,9 +9,6 @@ Companion skill: [grid-design-system](https://github.com/Jinshuooo/grid-design-s
 
 **Live demo:** [grid-design-system-demo.pages.dev](https://grid-design-system-demo.pages.dev/)
 
-<!-- Screenshot: add preview.png and uncomment -->
-<!-- ![Cupertino Glass demo](./preview.png) -->
-
 This demonstration showcases:
 - **Cupertino Glass Aesthetic**: Frosted glass panels (`backdrop-blur-xl`),
   subtle Apple-like gray palette, vibrant system blue accents (`#0071e3`), and
@@ -29,6 +26,12 @@ This demonstration showcases:
   pressing `L`.
 - **Modern Frontend Stack**: Built with React 18, Vite, Tailwind CSS, and
   Lucide React. Zero external font/image CDN dependencies.
+
+## Screenshots
+
+| Surface chaos (grid overlay off) | Hidden order revealed (grid overlay on) |
+| :---: | :---: |
+| ![English demo — surface chaos](images/demo-en-surface.png) | ![English demo — hidden grid](images/demo-en-grid.png) |
 
 ---
 
@@ -116,6 +119,9 @@ grid-design-system-demo/
 ├── .nvmrc                  # Node 20
 ├── .gitignore              # node_modules, dist, local state
 ├── LICENSE                 # MIT
+├── images/
+│   ├── demo-en-surface.png # Surface chaos screenshot
+│   └── demo-en-grid.png    # Hidden grid screenshot
 ├── public/
 │   └── favicon.svg         # Geometric vector brand icon
 ├── src/
