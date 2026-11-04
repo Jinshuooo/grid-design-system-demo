@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #0071e3;
+    --color-secondary: #86868b;
+    --color-accent: #2997ff;
+    --color-background: #fbfbfd;
+    --color-surface: #ffffff;
+    --color-text: #1d1d1f;
+    --color-muted: #86868b;
+    --color-success: #34c759;
+    --color-warning: #ff9f0a;
+    --color-error: #ff3b30;
+    --color-info: #007aff;
+    --radius: 1.25rem;
+
+    /* 8px Spacing scale */
+    --space-0-5: 4px;
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-6: 48px;
+    --space-8: 64px;
+    --space-12: 96px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #fbfbfd;
+    color: #1d1d1f;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* ─── 8px Baseline & Responsive Grid Overlay ─── */
+.grid-overlay-active {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 7px,
+    rgba(0, 113, 227, 0.12) 7px,
+    rgba(0, 113, 227, 0.12) 8px
+  );
+}
+
+/* Highlight locked elements when grid is revealed */
+.grid-overlay-active .grid-locked {
+  position: relative;
+  outline: 2px dashed rgba(0, 113, 227, 0.85) !important;
+  outline-offset: -2px;
+}
+
+.grid-overlay-active .grid-locked::before {
+  content: attr(data-grid-label);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #0071e3;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-bottom-right-radius: 6px;
+  z-index: 40;
+  box-shadow: 0 2px 4px rgba(0, 113, 227, 0.25);
+  pointer-events: none;
+}
+
+/* Hide 12-col specific coordinate badges on tablet & mobile */
+@media (max-width: 1023px) {
+  .grid-overlay-active .grid-locked::before {
+    display: none !important;
+  }
+}
+
+/* ─── Cupertino Glass Utilities ─── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05),
+              0 1px 2px rgba(0, 0, 0, 0.04),
+              inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.glass-panel-dark {
+  background: rgba(29, 29, 31, 0.75);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.glass-tape {
+  background: rgba(41, 151, 255, 0.18);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(41, 151, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 113, 227, 0.08);
+}
+
+.glass-tape-amber {
+  background: rgba(255, 159, 10, 0.2);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 159, 10, 0.35);
+  box-shadow: 0 2px 8px rgba(255, 159, 10, 0.08);
+}
+
+.glass-stamp-circle {
+  background: radial-gradient(circle, rgba(0, 113, 227, 0.12) 0%, rgba(255, 255, 255, 0.75) 100%);
+  backdrop-filter: blur(16px);
+  border: 1.5px dashed rgba(0, 113, 227, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.08);
+}
+
+/* Expressive Shard Polygon Clips */
+.clip-notch-tr {
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+}
+
+.clip-notch-bl {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+}
+
+.clip-shard-angle {
+  clip-path: polygon(0% 0%, 100% 1.5%, 98.5% 100%, 0% 98.5%);
+}
+
+/* ─── Kinetic Marquee Track ─── */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 36s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fbfbfd;
+}
+::-webkit-scrollbar-thumb {
+  background: #d2d2d7;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #86868b;
+}

@@ -1,0 +1,74 @@
+# ─── OS metadata ───
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ─── Editors and IDEs ───
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+*.swn
+*~
+*.bak
+*.orig
+*.rej
+.history/
+*.code-workspace
+
+# ─── Logs and caches ───
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+.cache/
+.temp/
+tmp/
+
+# ─── Dependencies and build output ───
+node_modules/
+dist/
+build/
+out/
+coverage/
+
+# ─── Local environment and secrets ───
+.env
+.env.*
+!.env.example
+*.local
+
+# ─── Local agent/tool state ───
+.claude/
+.cursor/
+.windsurf/
+.agents/
+.magpie/
+
+# ─── Archives and generated bundles ───
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+
+# ─── Office temp files ───
+~$*
+
+# ─── Optional Python tooling ───
+__pycache__/
+*.py[cod]
+.venv/
+venv/
